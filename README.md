@@ -51,7 +51,11 @@
 
 ## AppCompBase
 - 整個App 只要一個 Wrapper即可
+- PageHelper 曾經放在Filters 裡,後來改放到和 Filter 同級別, 採用DI
 - 根據學理和實做驗証, 每個 Blazor 頁面要用自己的 Adapter
+  - 每一個Adapter 會各自實例出一個 Filters
+    - 目前是在無參的 Constructor 實例化
+    - 為了方便後續大量直接繼承, 不做有參的 Constructor, 也就不能使用 DI
   - 每頁的篩選排序分頁,操作起來就像是有記住在那裡
   - 混用或是不當實例化, 頁面操作會有兩個頁面糾纏不清或是永遠記不住之前狀態的缺失
 - 必需要能訪問到 Data (DbContext) 和 Models (Entity Classes)
