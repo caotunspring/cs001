@@ -24,7 +24,7 @@
 - 兩組所有顯示欄位的排序
 - 每頁1-100筆可選的分頁
 
-# 三個例子
+## 三個例子
 - CS00１ 官網範例, 單一一個 Contact
 - CS002 貿易公司銷售和產品物料
 - CS003 倉儲項目所使用的表單和視圖
@@ -48,6 +48,13 @@
 - 初值化
 - 在適當的生命周期觸發數據更新
 
+
+## AppCompBase
+- 必需要能訪問到 Data (DbContext) 和 Models (Entity Classes)
+  - DbContext 的 Factory 是封裝在 base class 裡
+  - Entity 是搭配 EF Core 及 Dynamic LINQ 使用
+- Wrapper 等 components 以及 adapters 要先備好
+  - IAdapter PageHelper
 
 
 
