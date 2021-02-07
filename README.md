@@ -50,11 +50,15 @@
 
 
 ## AppCompBase
+- 整個App 只要一個 Wrapper即可
+- 根據學理和實做驗証, 每個 Blazor 頁面要用自己的 Adapter
+  - 每頁的篩選排序分頁,操作起來就像是有記住在那裡
+  - 混用或是不當實例化, 頁面操作會有兩個頁面糾纏不清或是永遠記不住之前狀態的缺失
 - 必需要能訪問到 Data (DbContext) 和 Models (Entity Classes)
   - DbContext 的 Factory 是封裝在 base class 裡
   - Entity 是搭配 EF Core 及 Dynamic LINQ 使用
 - Wrapper 等 components 以及 adapters 要先備好
-  - IAdapter PageHelper
+  - Wrapper,IAdapter, PageHelper
 
 
 
